@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { SNOW_FIELDS } from "../constants/SNOW_FEILDS";
 
 function Home() {
-  const [isLOgin, setLogin] = useState(false);
+  const [isLogin, setLogin] = useState(false);
 
-  if (isLOgin) {
+  if (isLogin) {
     return (
       <>
         <p>Welcome skiing! Get what you need here!</p>
         {SNOW_FIELDS.map((field) => (
-          <p>{field}</p>
+          <p key={field}>{field}</p>
         ))}
       </>
     );
@@ -20,6 +20,7 @@ function Home() {
         <button
           onClick={() => {
             setLogin(true);
+            console.log(1111, isLogin);
           }}
         >
           login
